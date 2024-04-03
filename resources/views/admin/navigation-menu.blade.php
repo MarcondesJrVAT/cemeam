@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('admin.dashboard') }}">
                         <x-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
@@ -13,7 +13,7 @@
             <div class="flex lg:inline-flex hidden ">
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
                         {{ __('Principal') }}
                     </x-nav-link>
                 </div>
@@ -31,22 +31,22 @@
                         </x-slot>
 
                         <x-slot name="content">
-                            <x-dropdown-link href="{{ route('dashboard') }}">
+                            <x-dropdown-link href="{{ route('admin.dashboard') }}">
                                 {{ __('Usuários') }}
                             </x-dropdown-link>
 
-                            <x-dropdown-link href="{{ route('dashboard') }}">
+                            <x-dropdown-link href="{{ route('admin.dashboard') }}">
                                 {{ __('Permissões') }}
                             </x-dropdown-link>
 
-                            <x-dropdown-link href="{{ route('dashboard') }}">
+                            <x-dropdown-link href="{{ route('admin.dashboard') }}">
                                 {{ __('Habilidades') }}
                             </x-dropdown-link>
                         </x-slot>
                     </x-dropdown>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
                         {{ __('Departamentos') }}
                     </x-nav-link>
                 </div>
@@ -64,19 +64,19 @@
                         </x-slot>
 
                         <x-slot name="content">
-                            <x-dropdown-link href="{{ route('dashboard') }}">
+                            <x-dropdown-link href="{{ route('admin.dashboard') }}">
                                 {{ __('Notícias') }}
                             </x-dropdown-link>
 
-                            <x-dropdown-link href="{{ route('dashboard') }}">
+                            <x-dropdown-link href="{{ route('admin.dashboard') }}">
                                 {{ __('Banners') }}
                             </x-dropdown-link>
 
-                            <x-dropdown-link href="{{ route('dashboard') }}">
+                            <x-dropdown-link href="{{ route('admin.dashboard') }}">
                                 {{ __('Slides') }}
                             </x-dropdown-link>
 
-                            <x-dropdown-link href="{{ route('dashboard') }}">
+                            <x-dropdown-link href="{{ route('admin.dashboard') }}">
                                 {{ __('Prêmios') }}
                             </x-dropdown-link>
                         </x-slot>
@@ -96,34 +96,34 @@
                         </x-slot>
 
                         <x-slot name="content">
-                            <x-dropdown-link href="{{ route('dashboard') }}">
+                            <x-dropdown-link href="{{ route('admin.dashboard') }}">
                                 {{ __('Anos Letivos') }}
                             </x-dropdown-link>
 
-                            <x-dropdown-link href="{{ route('dashboard') }}">
+                            <x-dropdown-link href="{{ route('admin.dashboard') }}">
                                 {{ __('Aulas') }}
                             </x-dropdown-link>
 
-                            <x-dropdown-link href="{{ route('dashboard') }}">
+                            <x-dropdown-link href="{{ route('admin.dashboard') }}">
                                 {{ __('Categorias') }}
                             </x-dropdown-link>
 
-                            <x-dropdown-link href="{{ route('dashboard') }}">
+                            <x-dropdown-link href="{{ route('admin.dashboard') }}">
                                 {{ __('Componentes Curriculares') }}
                             </x-dropdown-link>
 
-                            <x-dropdown-link href="{{ route('dashboard') }}">
+                            <x-dropdown-link href="{{ route('admin.dashboard') }}">
                                 {{ __('Cursos') }}
                             </x-dropdown-link>
 
-                            <x-dropdown-link href="{{ route('dashboard') }}">
+                            <x-dropdown-link href="{{ route('admin.dashboard') }}">
                                 {{ __('Séries') }}
                             </x-dropdown-link>
                         </x-slot>
                     </x-dropdown>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
                         {{ __('Comentários') }}
                     </x-nav-link>
                 </div>
@@ -254,7 +254,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden lg:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
             <details class="group [&_summary::-webkit-details-marker]:hidden">
@@ -287,7 +287,7 @@
                     </li>
                 </ul>
             </details>
-            <x-responsive-nav-link href="{{ route('dashboard') }}">
+            <x-responsive-nav-link href="{{ route('admin.dashboard') }}">
                 {{ __('Departamentos') }}
             </x-responsive-nav-link>
             <details class="group [&_summary::-webkit-details-marker]:hidden">
@@ -364,7 +364,7 @@
                     </li>
                 </ul>
             </details>
-            <x-responsive-nav-link href="{{ route('dashboard') }}">
+            <x-responsive-nav-link href="{{ route('admin.dashboard') }}">
                 {{ __('Comentários') }}
             </x-responsive-nav-link>
         </div>
