@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('site.dashboard');
-});
+})->name('site.dashboard');
 
 Route::middleware([
     'auth:sanctum',
