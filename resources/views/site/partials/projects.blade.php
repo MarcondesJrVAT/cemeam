@@ -37,30 +37,36 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper3 = new Swiper('#swiper-projects', {
-            // Optional parameters
-            slidesPerView: 3,
             spaceBetween: 30,
             autoplay: {
                 delay: 2500,
             },
-
-            // If we need pagination
             pagination: {
                 el: '.swiper-pagination',
                 type: "progressbar",
                 clickable: true,
             },
-
-            // Navigation arrows
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
-
-            // And if we need scrollbar
             scrollbar: {
                 el: '.swiper-scrollbar',
             },
+            breakpoints: {
+                480: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                },
+            }
         });
     </script>
 @endpush
