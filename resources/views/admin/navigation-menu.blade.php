@@ -257,76 +257,114 @@
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <details class="relative">
-                <summary class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out" active="request()->routeIs('dashboard')">{{ __('Usuários') }}</summary>
-                <div class="dropdown-content">
-                    <x-responsive-nav-link href="{{ route('dashboard') }}">
-                        {{ __('Lista de Usuários') }}
-                    </x-responsive-nav-link>
+            <details class="group [&_summary::-webkit-details-marker]:hidden">
+                <summary class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                    <div class="flex">
+                        <span class="font-medium">Usuários </span>
+                    </div>
 
-                    <x-responsive-nav-link href="{{ route('dashboard') }}">
-                        {{ __('Permissões') }}
-                    </x-responsive-nav-link>
-
-                    <x-responsive-nav-link href="{{ route('dashboard') }}">
-                        {{ __('Habilidades') }}
-                    </x-responsive-nav-link>
-                </div>
+                    <span class="shrink-0 transition duration-300 group-open:-rotate-180">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </span>
+                </summary>
+                <ul class="mt-2 space-y-1 px-4">
+                    <li>
+                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                            {{ __('Lista de Usuários') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                            {{ __('Permissões') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                            {{ __('Habilidades') }}
+                        </a>
+                    </li>
+                </ul>
             </details>
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link href="{{ route('dashboard') }}">
                 {{ __('Departamentos') }}
             </x-responsive-nav-link>
-            <details class="relative">
-                <summary class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out" active="request()->routeIs('dashboard')">{{ __('Postagens') }}</summary>
-                <div class="dropdown-content">
-                    <x-responsive-nav-link href="{{ route('dashboard') }}">
-                        {{ __('Notícias') }}
-                    </x-responsive-nav-link>
-
-                    <x-responsive-nav-link href="{{ route('dashboard') }}">
-                        {{ __('Banners') }}
-                    </x-responsive-nav-link>
-
-                    <x-responsive-nav-link href="{{ route('dashboard') }}">
-                        {{ __('Slides') }}
-                    </x-responsive-nav-link>
-
-                    <x-responsive-nav-link href="{{ route('dashboard') }}">
-                        {{ __('Prêmios') }}
-                    </x-responsive-nav-link>
-                </div>
-            </details>
-            <details class="relative">
-                <summary class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out" active="request()->routeIs('dashboard')">
-                    {{ __('LMS') }}
+            <details class="group [&_summary::-webkit-details-marker]:hidden">
+                <summary class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                    <span class="font-medium"> Postagens </span>
+                    <span class="shrink-0 transition duration-300 group-open:-rotate-180">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </span>
                 </summary>
-                <div class="dropdown-content">
-                    <x-responsive-nav-link href="{{ route('dashboard') }}">
-                        {{ __('Anos Letivos') }}
-                    </x-responsive-nav-link>
-
-                    <x-responsive-nav-link href="{{ route('dashboard') }}">
-                        {{ __('Aulas') }}
-                    </x-responsive-nav-link>
-
-                    <x-responsive-nav-link href="{{ route('dashboard') }}">
-                        {{ __('Categorias') }}
-                    </x-responsive-nav-link>
-
-                    <x-responsive-nav-link href="{{ route('dashboard') }}">
-                        {{ __('Componentes Curriculares') }}
-                    </x-responsive-nav-link>
-
-                    <x-responsive-nav-link href="{{ route('dashboard') }}">
-                        {{ __('Cursos') }}
-                    </x-responsive-nav-link>
-
-                    <x-responsive-nav-link href="{{ route('dashboard') }}">
-                        {{ __('Séries') }}
-                    </x-responsive-nav-link>
-                </div>
+                <ul class="mt-2 space-y-1 px-4">
+                    <li>
+                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                            {{ __('Notícias') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                            {{ __('Banners') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                            {{ __('Slides') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                            {{ __('Prêmios') }}
+                        </a>
+                    </li>
+                </ul>
             </details>
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <details class="group [&_summary::-webkit-details-marker]:hidden">
+                <summary class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                    <span class="font-medium"> LMS </span>
+                    <span class="shrink-0 transition duration-300 group-open:-rotate-180">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </span>
+                </summary>
+                <ul class="mt-2 space-y-1 px-4">
+                    <li>
+                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                            {{ __('Cursos') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                            {{ __('Categorias') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                            {{ __('Séries') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                            {{ __('Componentes') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                            {{ __('Anos Letivos') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                            {{ __('Aulas') }}
+                        </a>
+                    </li>
+                </ul>
+            </details>
+            <x-responsive-nav-link href="{{ route('dashboard') }}">
                 {{ __('Comentários') }}
             </x-responsive-nav-link>
         </div>
