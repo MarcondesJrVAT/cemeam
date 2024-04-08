@@ -23,36 +23,55 @@ class DatabaseSeeder extends Seeder
 
     private function createRoles(): void
     {
-        Role::create(['name' => 'super-admin', 'display_name' => 'Super Admin']);
-        Role::create(['name' => 'admin', 'display_name' => 'Admin']);
-        Role::create(['name' => 'author', 'display_name' => 'Author']);
-        Role::create(['name' => 'user', 'display_name' => 'User']);
+        Role::create(['name' => 'Super Admin', 'slug' => 'super-admin']);
+        sleep(1);
+        Role::create(['name' => 'Admin', 'slug' => 'admin']);
+        sleep(1);
+        Role::create(['name' => 'Author', 'slug' => 'author']);
+        sleep(1);
+        Role::create(['name' => 'User', 'slug' => 'user']);
     }
 
     private function createPermissions(): void
     {
-        Permission::create(['name' => 'create-user', 'display_name' => 'Create User']);
-        Permission::create(['name' => 'view-user', 'display_name' => 'View User']);
-        Permission::create(['name' => 'edit-user', 'display_name' => 'Edit User']);
-        Permission::create(['name' => 'delete-user', 'display_name' => 'Delete User']);
+        Permission::create(['name' => 'Create User', 'slug' => 'create-user']);
+        sleep(1);
+        Permission::create(['name' => 'View User', 'slug' => 'view-user']);
+        sleep(1);
+        Permission::create(['name' => 'Edit User', 'slug' => 'edit-user']);
+        sleep(1);
+        Permission::create(['name' => 'Delete User', 'slug' => 'delete-user']);
+        sleep(1);
 
-        Permission::create(['name' => 'create-role', 'display_name' => 'Create Role']);
-        Permission::create(['name' => 'view-role', 'display_name' => 'View Role']);
-        Permission::create(['name' => 'edit-role', 'display_name' => 'Edit Role']);
-        Permission::create(['name' => 'delete-role', 'display_name' => 'Delete Role']);
+        Permission::create(['name' => 'Create Role', 'slug' => 'create-role']);
+        sleep(1);
+        Permission::create(['name' => 'View Role', 'slug' => 'view-role']);
+        sleep(1);
+        Permission::create(['name' => 'Edit Role', 'slug' => 'edit-role']);
+        sleep(1);
+        Permission::create(['name' => 'Delete Role', 'slug' => 'delete-role']);
+        sleep(1);
 
-        Permission::create(['name' => 'create-permission', 'display_name' => 'Create Permission']);
-        Permission::create(['name' => 'view-permission', 'display_name' => 'View Permission']);
-        Permission::create(['name' => 'edit-permission', 'display_name' => 'Edit Permission']);
-        Permission::create(['name' => 'delete-permission', 'display_name' => 'Delete Permission']);
+        Permission::create(['name' => 'Create Permission', 'slug' => 'create-permission']);
+        sleep(1);
+        Permission::create(['name' => 'View Permission', 'slug' => 'view-permission']);
+        sleep(1);
+        Permission::create(['name' => 'Edit Permission', 'slug' => 'edit-permission']);
+        sleep(1);
+        Permission::create(['name' => 'Delete Permission', 'slug' => 'delete-permission']);
+        sleep(1);
     }
 
     private function createUsers(): void
     {
-        User::create(['name' => 'Super', 'email' => 'super@super.com', 'password' => bcrypt('secretsuper')]);
-        User::create(['name' => 'Admin', 'email' => 'admin@admin.com', 'password' => bcrypt('secretadmin')]);
-        User::create(['name' => 'Author', 'email' => 'author@author.com', 'password' => bcrypt('secretauthor')]);
-        User::create(['name' => 'User', 'email' => 'user@user.com', 'password' => bcrypt('secretuser')]);
+        User::create(['name' => 'Super', 'email' => 'super@super.com', 'password' => bcrypt('supersuper')]);
+        sleep(1);
+        User::create(['name' => 'Admin', 'email' => 'admin@admin.com', 'password' => bcrypt('adminadmin')]);
+        sleep(1);
+        User::create(['name' => 'Author', 'email' => 'author@author.com', 'password' => bcrypt('authorauthor')]);
+        sleep(1);
+        User::create(['name' => 'User', 'email' => 'user@user.com', 'password' => bcrypt('useruser')]);
+        sleep(1);
     }
 
     private function attachPermissionsToRoles(): void
@@ -61,10 +80,10 @@ class DatabaseSeeder extends Seeder
         $permissions = ['create-user', 'view-user', 'edit-user', 'delete-user', 'create-role', 'view-role', 'edit-role', 'delete-role', 'create-permission', 'view-permission', 'edit-permission', 'delete-permission'];
 
         foreach ($roles as $roleName) {
-            $role = Role::where('name', $roleName)->first();
+            $role = Role::where('slug', $roleName)->first();
 
             foreach ($permissions as $permissionName) {
-                $permission = Permission::where('name', $permissionName)->first();
+                $permission = Permission::where('slug', $permissionName)->first();
                 $role->permissions()->attach($permission);
             }
         }
