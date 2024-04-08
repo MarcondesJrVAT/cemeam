@@ -26,7 +26,7 @@
         <div class="font-sans text-gray-900 dark:text-gray-100 antialiased">
             {{ $slot }}
         </div>
-        @livewire('dark-mode')
+        @livewire('components.dark-mode')
         @livewireScripts
     </body>
 </html>

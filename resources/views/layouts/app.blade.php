@@ -46,7 +46,8 @@
 
 @stack('modals')
 @stack('scripts')
-@livewire('dark-mode')
+@include('components.footer')
+@livewire('components.dark-mode')
 @livewireScripts
 </body>
 </html>
