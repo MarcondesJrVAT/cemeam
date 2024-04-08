@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class RoleFactory extends Factory
 {
@@ -21,9 +22,10 @@ class RoleFactory extends Factory
      */
     public function definition(): array
     {
+        $name = $this->faker->word;
         return [
-            'name' => $this->faker->word,
-            'slug' => $this->faker->slug,
+            'name' => $name,
+            'slug' => Str::slug($name),
         ];
     }
 }
