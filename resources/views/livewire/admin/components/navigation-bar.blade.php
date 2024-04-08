@@ -40,7 +40,7 @@
                             </x-dropdown-link>
 
                             <x-dropdown-link href="{{ route('admin.roles') }}">
-                                {{ __('Habilidades') }}
+                                {{ __('Funções') }}
                             </x-dropdown-link>
                         </x-slot>
                     </x-dropdown>
@@ -271,18 +271,18 @@
                 </summary>
                 <ul class="mt-2 space-y-1 px-4">
                     <li>
-                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                        <a href="{{ route('admin.users') }}" class="block px-4 py-2 border-l-4 border-transparent border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
                             {{ __('Lista de Usuários') }}
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                        <a href="{{ route('admin.permissions') }}" class="block px-4 py-2 border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
                             {{ __('Permissões') }}
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="block px-4 py-2 border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
-                            {{ __('Habilidades') }}
+                        <a href="{{ route('admin.roles') }}" class="block px-4 py-2 border-l-4 border-transparent text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out flex cursor-pointer items-center justify-between">
+                            {{ __('Funções') }}
                         </a>
                     </li>
                 </ul>
