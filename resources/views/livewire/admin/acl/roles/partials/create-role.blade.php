@@ -1,20 +1,10 @@
 <div>
     <div class="flex inline-flex space-x-2 justify-items-center ">
         <div>
-            @if (session()->has('message'))
-                <div id="alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-2 rounded relative flex items-center justify-between transition-opacity duration-500 ease-in-out" role="alert">
-                    <div>
-                        <strong class="font-bold">Cadastrado!</strong>
-                        <span class="block sm:inline">{{ session('message') }}</span>
-                    </div>
-                    <button onclick="this.parentElement.remove()" class="relative right-0 ease-in-out">
-                        <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Fechar</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"></path></svg>
-                    </button>
-                </div>
-            @endif
-        </div>
-        <div>
-            <button wire:click="toggleModal" class="bg-blue-500 hover:bg-blue-700 border border-blue-400 text-white font-bold py-2 px-4 rounded">Nova Função</button>
+            <button wire:click="toggleModal" class="flex space-x-2 bg-blue-500 hover:bg-blue-700 border border-blue-400 text-white font-bold py-2 px-4 rounded">
+                <x-icons.plus-circle/>
+                <label class="text-xl font-medium">Nova Função</label>
+            </button>
         </div>
     </div>
     @if($showModal)
@@ -44,9 +34,9 @@
                                             @error('name') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                                         </div>
                                     </div>
-                                    <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                        <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-                                        Finalizar
+                                    <button type="submit" class="text-white inline-flex space-x-2 items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                        <x-icons.plus-circle class="w-4 h-4 mx-2" />
+                                        <label class="text-xl font-medium">Finalizar</label>
                                     </button>
                                 </form>
                             </div>
@@ -56,19 +46,4 @@
             </div>
         </div>
     @endif
-
 </div>
-
-@push('scripts')
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const alert = document.getElementById('alert');
-            if (alert) {
-                setTimeout(() => {
-                    alert.style.opacity = 0;
-                    setTimeout(() => alert.remove(), 500);
-                }, 3000);
-            }
-        });
-    </script>
-@endpush

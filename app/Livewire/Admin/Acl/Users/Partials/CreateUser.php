@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\Acl\Users\Partials;
 
+use App\Models\Role;
 use App\Models\User;
 use Livewire\Component;
 
@@ -12,6 +13,7 @@ class CreateUser extends Component
     public $email;
     public $password;
     public $password_confirmation;
+    public $roles = [];
 
     public function toggleModal(): void
     {
@@ -21,7 +23,8 @@ class CreateUser extends Component
 
     public function render()
     {
-        return view('livewire.admin.acl.users.partials.create-user');
+        $allRoles = Role::all();
+        return view('livewire.admin.acl.users.partials.create-user', compact('allRoles'));
     }
 
     public function submit()
@@ -31,13 +34,26 @@ class CreateUser extends Component
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8|confirmed',
             'password_confirmation' => 'required',
+            'roles' => 'required|array|min:1',
         ]);
 
-        $validatedData['password'] = bcrypt($validatedData['password']);
+        $user = User::create([
+            'name' => $this->name,
+            'email' => $this->email,
+            'password' => bcrypt($this->password),
+        ]);
 
-        User::create($validatedData);
+        $user->roles()->sync($this->roles);
 
-        session()->flash('message', 'Usuário Criado com Sucesso.');
+        $this->reset([
+            'name',
+            'email',
+            'password',
+            'password_confirmation',
+            'roles',
+        ]);
+
+        session()->flash('success', 'Usuário Criado com Sucesso.');
 
         $this->toggleModal();
 

@@ -10,7 +10,7 @@ class PermissionsTable extends Component
 {
     public string $search = '';
 
-    protected $listeners = ['permissionAdded' => '$refresh', 'permissionUpdated' => '$refresh', 'permissionDeleted' => '$refresh'];
+    protected $listeners = ['searchPermissions'];
 
     public function searchPermissions(string $search): void
     {

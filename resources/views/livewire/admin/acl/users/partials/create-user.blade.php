@@ -1,20 +1,10 @@
 <div>
     <div class="flex inline-flex space-x-2 justify-items-center ">
         <div>
-            @if (session()->has('message'))
-                <div id="alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-2 rounded relative flex items-center justify-between transition-opacity duration-500 ease-in-out" role="alert">
-                    <div>
-                        <strong class="font-bold">Cadastrado!</strong>
-                        <span class="block sm:inline">{{ session('message') }}</span>
-                    </div>
-                    <button onclick="this.parentElement.remove()" class="relative right-0 ease-in-out">
-                        <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"></path></svg>
-                    </button>
-                </div>
-            @endif
-        </div>
-        <div>
-            <button wire:click="toggleModal" class="bg-blue-500 hover:bg-blue-700 border border-blue-400 text-white font-bold py-2 px-4 rounded">Create User</button>
+            <button wire:click="toggleModal" class="flex space-x-2 bg-blue-500 hover:bg-blue-700 border border-blue-400 text-white font-bold py-2 px-4 rounded">
+                <x-icons.user-plus/>
+                <label class="text-xl font-medium">Novo Usuário</label>
+            </button>
         </div>
     </div>
     @if($showModal)
@@ -39,29 +29,38 @@
                                 <form wire:submit.prevent="submit" class="p-4 md:p-5">
                                     <div class="grid gap-4 mb-4 grid-cols-2">
                                         <div class="col-span-2">
-                                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-                                            <input type="text" wire:model="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Name" required>
+                                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome</label>
+                                            <input type="text" wire:model="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Nome" required>
                                             @error('name') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                                         </div>
                                         <div class="col-span-2">
                                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">E-mail</label>
-                                            <input type="email" wire:model="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Email Address" required>
+                                            <input type="email" wire:model="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Endereço de Email" required>
                                             @error('email') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                                         </div>
                                         <div class="col-span-2 sm:col-span-1">
-                                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                                            <input type="password" wire:model="password" name="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="min 8 caracteres" required>
+                                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Senha</label>
+                                            <input type="password" wire:model="password" name="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Mínimo de 8 caracteres" required>
                                             @error('password') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                                         </div>
                                         <div class="col-span-2 sm:col-span-1">
-                                            <label for="password_confirmation" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm Password</label>
-                                            <input type="password" wire:model="password_confirmation" name="password_confirmation" id="password_confirmation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Confirm Password" required>
+                                            <label for="password_confirmation" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirme sua Senha</label>
+                                            <input type="password" wire:model="password_confirmation" name="password_confirmation" id="password_confirmation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Confirme sua Senha" required>
                                             @error('password') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+                                        </div>
+                                        <div class="col-span-2">
+                                            <label for="role" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Função</label>
+                                            <select wire:ignore wire:model="roles" name="roles[]" id="roles" class="select2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" multiple="multiple">
+                                                @foreach($allRoles as $role)
+                                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('roles') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                                         </div>
                                     </div>
                                     <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                        <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-                                        Finalizar
+                                        <x-icons.plus-circle class="w-4 h-4 mx-2" />
+                                        <label class="text-xl font-medium">Finalizar</label>
                                     </button>
                                 </form>
                             </div>
@@ -71,19 +70,15 @@
             </div>
         </div>
     @endif
-
 </div>
-
 @push('scripts')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const alert = document.getElementById('alert');
-            if (alert) {
-                setTimeout(() => {
-                    alert.style.opacity = 0;
-                    setTimeout(() => alert.remove(), 500);
-                }, 3000);
-            }
+        $(document).ready(function() {
+            $('.select2').select2();
+        });
+        document.addEventListener('livewire:update', function () {
+            $('.select2').select2();
         });
     </script>
 @endpush

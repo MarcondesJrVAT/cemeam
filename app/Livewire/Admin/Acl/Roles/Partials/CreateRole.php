@@ -36,7 +36,7 @@ class CreateRole extends Component
 
         Role::create($validatedData);
 
-        session()->flash('success', 'Role Criada com Sucesso!');
+        session()->flash('success', 'Função Criada com Sucesso!');
 
         $this->toggleModal();
 
